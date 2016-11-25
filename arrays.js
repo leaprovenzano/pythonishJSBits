@@ -14,3 +14,15 @@ const sum_map = (arr1, arr2) => arr2.map((e, index) => arr1[index] + e);
 //numeric sort for the lazy.
 const numsort = arr => arr.sort((n1, n2) => n1 -n2);
 
+//basic array equality
+const equals = (arr, other) => (arr.length == arr.length) && arr.every((e, i) => e === other[i]);
+
+
+//not py just nice to have
+const flatten = (...args) => {
+    var f = [].concat(...args);
+    if (equals(f, [...args])){
+        return f;
+    }
+    return flatten(...f);
+}
